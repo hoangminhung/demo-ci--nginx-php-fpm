@@ -1,0 +1,14 @@
+version: '2'
+services:
+    web:
+        container_name: hung-nginx
+        build:
+            context: ./nginx
+        ports:
+            - "4002:80"
+        links:
+            - php
+    php:
+        container_name: hung-php-fpm
+        build:
+            context: ./php-fpm
